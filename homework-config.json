@@ -1,0 +1,38 @@
+{
+  "targets": [
+    {
+      "id": "mom",
+      "name": "妈妈",
+      "searchKeyword": "妈妈",
+      "type": "contact",
+      "enabled": true
+    },
+    {
+      "id": "homework_group_1",
+      "name": "AI 编程作业群",
+      "searchKeyword": "AI 编程",
+      "type": "group",
+      "enabled": false
+    },
+    {
+      "id": "teacher_zhang",
+      "name": "张老师",
+      "searchKeyword": "张老师",
+      "type": "contact",
+      "enabled": false
+    }
+  ],
+  "submissions": [
+    {
+      "videoPath": "/Users/wenglinjun/Videos/test.mp4",
+      "caption": "测试视频～",
+      "targetIds": ["mom"]
+    }
+  ],
+  "options": {
+    "preventDuplicate": true,
+    "retryOnFailure": 3,
+    "uploadTimeout": 300000,
+    "delayBetweenTargets": 5000
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "_comment": "这是一个完整的配置示例，复制为 homework-config.json 后修改",
+
+  "targets": [
+    {
+      "id": "ai_homework_group",
+      "name": "AI 编程作业群",
+      "searchKeyword": "AI 编程",
+      "type": "group",
+      "enabled": true,
+      "_note": "群聊示例，searchKeyword 是搜索时使用的关键词"
+    },
+    {
+      "id": "algorithm_group",
+      "name": "算法训练营",
+      "searchKeyword": "算法",
+      "type": "group",
+      "enabled": false,
+      "_note": "enabled=false 表示暂时不提交到这个群"
+    },
+    {
+      "id": "teacher_zhang",
+      "name": "张老师",
+      "searchKeyword": "张老师",
+      "type": "contact",
+      "enabled": false,
+      "_note": "个人联系人示例，type 为 contact"
+    }
+  ],
+
+  "submissions": [
+    {
+      "videoPath": "/Users/wenglinjun/Videos/week3_homework.mp4",
+      "caption": "第3周作业 - 温林俊\n实现功能：\n1. 视频分类\n2. OCR 识别\n3. 自动化脚本",
+      "targetIds": ["ai_homework_group"],
+      "_note": "单个视频提交到一个群"
+    },
+    {
+      "videoPath": "/Users/wenglinjun/Videos/algorithm_solution.mp4",
+      "caption": "算法题解答 - Week 3\n时间复杂度: O(n log n)",
+      "targetIds": ["algorithm_group", "teacher_zhang"],
+      "_note": "同一个视频可以提交到多个目标（群和个人）"
+    },
+    {
+      "videoPath": "/Users/wenglinjun/Videos/demo_video.mp4",
+      "caption": "",
+      "targetIds": ["ai_homework_group"],
+      "_note": "可以不添加文字说明，caption 留空即可"
+    }
+  ],
+
+  "options": {
+    "preventDuplicate": true,
+    "_note_preventDuplicate": "设为 true 时，会检查是否已提交过相同视频到相同目标",
+
+    "retryOnFailure": 3,
+    "_note_retryOnFailure": "失败后重试次数，建议 2-3 次",
+
+    "uploadTimeout": 300000,
+    "_note_uploadTimeout": "上传超时时间（毫秒），300000 = 5分钟，大文件建议 600000 = 10分钟",
+
+    "delayBetweenTargets": 5000,
+    "_note_delayBetweenTargets": "提交到不同目标之间的延迟（毫秒），避免过快操作被限制"
+  },
+
+  "_usage": "运行命令: node homework-submitter.js --config=homework-config.json",
+  "_dry_run": "测试命令: node homework-submitter.js --config=homework-config.json --dry-run"
+}
